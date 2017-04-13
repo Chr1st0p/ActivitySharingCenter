@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/P:/NetBeans/Activity_Sharing_Center/web/WEB-INF/jspf/footer.jspf</file>
+            <file>file:/P:/NetBeans/Activity_Sharing_Center/web/WEB-INF/view/profile.jsp</file>
+            <file>file:/P:/NetBeans/Activity_Sharing_Center/web/addposts.jsp</file>
+            <file>file:/P:/NetBeans/Activity_Sharing_Center/src/java/com/jevents/MySQLAccessPost.java</file>
+            <file>file:/P:/NetBeans/Activity_Sharing_Center/web/createActivity.jsp</file>
+            <file>file:/P:/NetBeans/Activity_Sharing_Center/src/java/com/jevents/ActivityDBAO.java</file>
+            <file>file:/P:/NetBeans/Activity_Sharing_Center/web/WEB-INF/jspf/actfooter.jspf</file>
+            <file>file:/P:/NetBeans/Activity_Sharing_Center/web/WEB-INF/web.xml</file>
+            <file>file:/P:/NetBeans/Activity_Sharing_Center/web/posts.jsp</file>
+            <file>file:/P:/NetBeans/Activity_Sharing_Center/src/java/com/jevents/MySQLAccess.java</file>
+            <file>file:/P:/NetBeans/Activity_Sharing_Center/src/java/com/jevents/controller/AddPostsServlet.java</file>
+            <file>file:/P:/NetBeans/Activity_Sharing_Center/src/java/com/jevents/controller/GetPostServlet.java</file>
+            <file>file:/P:/NetBeans/Activity_Sharing_Center/web/WEB-INF/jspf/header.jspf</file>
+            <file>file:/P:/NetBeans/Activity_Sharing_Center/web/WEB-INF/jspf/headerO.jspf</file>
+            <file>file:/P:/NetBeans/Activity_Sharing_Center/src/java/com/jevents/model/Activity.java</file>
+            <file>file:/P:/NetBeans/Activity_Sharing_Center/web/addres.jsp</file>
+            <file>file:/P:/NetBeans/Activity_Sharing_Center/web/WEB-INF/jspf/actheader.jspf</file>
+            <file>file:/P:/NetBeans/Activity_Sharing_Center/src/java/com/jevents/Activity/CreateActivity.java</file>
+            <file>file:/P:/NetBeans/Activity_Sharing_Center/web/search.jsp</file>
+            <file>file:/P:/NetBeans/Activity_Sharing_Center/src/java/com/jevents/controller/LoginServlet.java</file>
+            <file>file:/P:/NetBeans/Activity_Sharing_Center/web/login.jsp</file>
+            <file>file:/P:/NetBeans/Activity_Sharing_Center/src/java/com/jevents/controller/DelPostsServlet.java</file>
+            <file>file:/P:/NetBeans/Activity_Sharing_Center/src/java/com/jevents/Activity/ViewActivity.java</file>
+            <file>file:/P:/NetBeans/Activity_Sharing_Center/src/java/com/jevents/controller/SignupServlet.java</file>
+        </group>
+    </open-files>
+</project-private>

@@ -1,0 +1,87 @@
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="${initParam.js}/jquery-3.1.1.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="${initParam.js}/Moment.js"></script>
+<!--  date time part -->
+<script src="${initParam.js}/bootstrap-datetimepicker.js"></script>
+<!-- table -->
+<script src="${initParam.js}/jquery.dataTables.min.js"></script>
+<script src="${initParam.js}/bootstrap.min.js"></script>
+<!-- Login & Signup -->
+<script src="${initParam.js}/jquery.validate.min.js"></script>
+<script src="${initParam.js}/login_signup.js"></script>
+<c:if test="${result == 'failed'}">
+    <script>
+        var connected = false;
+        var jid = "";
+        var connection = null;
+        var BOSH_SERVICE = 'http://127.0.0.1:7070/http-bind/';
+        function onConnect(status) {
+            console.log(status);
+            if (status === Strophe.Status.CONNFAIL) {
+                console.log("connect fail");
+            } else if (status === Strophe.Status.AUTHFAIL) {
+                console.log("authentic fail");
+            } else if (status === Strophe.Status.DISCONNECTED) {
+                console.log("Disconnected");
+                connected = false;
+            } else if (status === Strophe.Status.CONNECTED) {
+                connected = true;
+                console.log("sid" + connection._proto.sid);
+                console.log("rid" + connection._proto.rid);
+            }
+        }
+        function getCookie(name)
+        {
+            var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+            if (arr = document.cookie.match(reg))
+                return unescape(arr[2]);
+            else
+                return null;
+        }
+//        if (!connected) {
+//            connection = new Strophe.Connection(BOSH_SERVICE);
+//            connection.connect(getCookie("jid"), getCookie("password"), onConnect);
+//            jid = "Jack@www.serverathome.com";
+//        }
+//        converse.initialize({
+//            bosh_service_url: 'http://127.0.0.1:7070/http-bind/ ', // Please use this connection manager only for testing purposes
+//            i18n: locales.en, // Refer to ./locale/locales.js to see which locales are supported
+//            show_controlbox_by_default: false,
+//            keepalive: false,
+//            jid: connection.jid,
+//            authentication: 'prebind',
+//            sid: connection._proto.sid,
+//            rid: connection._proto.rid,
+//            allow_logout: false
+//        });
+        converse.initialize({
+            bosh_service_url: 'http://127.0.0.1:7070/http-bind/ ', // Please use this connection manager only for testing purposes
+            i18n: locales.en, // Refer to ./locale/locales.js to see which locales are supported
+            show_controlbox_by_default: false,
+            auto_login: true,
+            authentication: 'login',
+            keepalive: true,
+            jid: getCookie("jid"),
+            password: getCookie("password")
+        });
+        $(document).ready(function () {
+            $('#myModal').modal('show');
+        });
+//        $(window).bind('unload', function () {
+//            connection.flush();
+//            connection._options.sync = true;
+//            connection.disconnect();
+//            console.log("Unload");
+//        });
+//        $(window).unload(function () {
+//            alert("unload");
+//            connection.flush();
+//            connection._options.sync = true;
+//            connection.disconnect();
+//        });
+
+    </script>
+</c:if>
+</body>
+</html>

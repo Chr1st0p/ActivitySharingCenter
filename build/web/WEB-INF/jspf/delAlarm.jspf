@@ -1,0 +1,11 @@
+<script>
+function Alarm(url){
+	var x;
+	var r=confirm("Delete?");
+	if (r==true){
+		 window.location.href = url;
+		
+	}
+	//document.getElementById("demo").innerHTML=x;
+}
+</script>

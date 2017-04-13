@@ -1,0 +1,80 @@
+</div><!-- End Carousel Inner -->
+<script>
+
+    var connected = false;
+    var jid = "";
+    var connection = null;
+    var BOSH_SERVICE = 'http://127.0.0.1:7070/http-bind/';
+    var i = 0;
+    function onConnect(status) {
+        console.log(status);
+        if (status === Strophe.Status.CONNFAIL) {
+            console.log("connect fail");
+        } else if (status === Strophe.Status.AUTHFAIL) {
+            console.log("authentic fail");
+        } else if (status === Strophe.Status.DISCONNECTED) {
+            console.log("Disconnected");
+            connected = false;
+        } else if (status === Strophe.Status.CONNECTED) {
+            i++;
+            connected = true;
+            console.log("sid" + connection._proto.sid);
+            console.log("rid" + connection._proto.rid);
+//            if (i === 1) {
+//                console.log("start");
+//                converse.initialize({
+//                    bosh_service_url: 'http://127.0.0.1:7070/http-bind/ ', // Please use this connection manager only for testing purposes
+//                    i18n: locales.en, // Refer to ./locale/locales.js to see which locales are supported
+//                    show_controlbox_by_default: false,
+//                    prebind:true,
+//                    keepalive: true,
+//                    jid: connection.jid,
+//                    authentication: 'prebind',
+//                    sid: connection._proto.sid,
+//                    rid: connection._proto.rid,
+//                    allow_logout: false
+//                });
+//            }
+        }
+    }
+    function getCookie(name)
+    {
+        var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+        if (arr = document.cookie.match(reg))
+            return unescape(arr[2]);
+        else
+            return null;
+    }
+    converse.initialize({
+        bosh_service_url: 'http://127.0.0.1:7070/http-bind/ ', // Please use this connection manager only for testing purposes
+        i18n: locales.en, // Refer to ./locale/locales.js to see which locales are supported
+        show_controlbox_by_default: false,
+        auto_login: true,
+        authentication: 'login',
+        keepalive: true,
+        jid: getCookie("jid"),
+        password: getCookie("password")
+    });
+//    if (!connected) {
+//        connection = new Strophe.Connection(BOSH_SERVICE);
+//        connection.connect(getCookie("jid"), getCookie("password"), onConnect);
+//    }
+
+    $(document).ready(function () {
+
+    });
+//    $(window).bind('unload', function () {
+//        connection.flush();
+//        connection._options.sync = true;
+//        connection.disconnect();
+//        console.log("Unload");
+//    });
+//    $(window).unload(function () {
+//        connection.flush();
+//        connection._options.sync = true;
+//        connection.disconnect();
+//    });
+
+</script>
+</body>
+</html>
