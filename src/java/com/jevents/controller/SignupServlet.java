@@ -74,7 +74,7 @@ public class SignupServlet extends HttpServlet {
             resultsLogin = XMPP.Login(reg_fullname, reg_password);
 //            resultsBOSH = XMPP.BOSHLogin(reg_fullname, reg_password);
         } catch (Exception e) {
-            System.out.println("regist exception");
+            System.out.println("regist XMPP exception");
             e.printStackTrace();
         }
         if (resultsRegist.equals("ERROR")) {

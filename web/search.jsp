@@ -48,63 +48,49 @@
                 }
             });
 
-            //        
-            //        var beachMarker = new google.maps.Marker({
-            //            position: {lat: -33.890, lng: 151.274},
-            //            map: map,
-            //            icon: image
-            //        });
             var soccer = '${initParam.img}/icons/soccer.png';
             var basket = '${initParam.img}/icons/basketball.png';
             var defaultimage = '${initParam.img}/icons/default.png';
             var markers = [];
             var i = 0;
-            var infowindows = [];
         <c:if test="${!empty resultlist}">
             <c:forEach items="${resultlist}" var="result" >
                 <% Activity activity = (Activity) pageContext.getAttribute("result");%>
                 <c:choose>
                     <c:when test="${result.getCategory()==1}">
-            markers[i] = new google.maps.Marker({
-                position: {lat:<%= activity.getLatitude()%>, lng:<%= activity.getLongitude()%>},
-                map: map,
-                icon: soccer
-            });
-
-            google.maps.event.addListener(markers[i], 'click', function () {
-                window.location.href = "/JED_Sports_Organization_System/ViewActivity?id=" +<%= activity.getId()%>;
-            });
+                        markers[i] = new google.maps.Marker({
+                            position: {lat:<%= activity.getLatitude()%>, lng:<%= activity.getLongitude()%>},
+                            map: map,
+                            icon: soccer
+                        });
+                        google.maps.event.addListener(markers[i], 'click', function () {
+                            window.location.href = "/JED_Sports_Organization_System/ViewActivity?id=" +<%= activity.getId()%>;
+                        });
                     </c:when>
                     <c:when test="${result.getCategory()==3}">
-            markers[i] = new google.maps.Marker({
-                position: {lat:<%= activity.getLatitude()%>, lng:<%= activity.getLongitude()%>},
-                map: map,
-                icon: basket
-            });
-            infowindows[i] = new google.maps.InfoWindow();
-            google.maps.event.addListener(markers[i], 'click', function () {
-                window.location.href = "/JED_Sports_Organization_System/ViewActivity?id=" +<%= activity.getId()%>;
-            });
-
+                        markers[i] = new google.maps.Marker({
+                            position: {lat:<%= activity.getLatitude()%>, lng:<%= activity.getLongitude()%>},
+                            map: map,
+                            icon: basket
+                        });
+                        google.maps.event.addListener(markers[i], 'click', function () {
+                            window.location.href = "/JED_Sports_Organization_System/ViewActivity?id=" +<%= activity.getId()%>;
+                        });
                     </c:when>
                     <c:otherwise>
-            markers[i] = new google.maps.Marker({
-                position: {lat:<%= activity.getLatitude()%>, lng:<%= activity.getLongitude()%>},
-                map: map,
-                icon: defaultimage
-            });
-            infowindows[i] = new google.maps.InfoWindow();
-            google.maps.event.addListener(markers[i], 'click', function () {
-                window.location.href = "/JED_Sports_Organization_System/ViewActivity?id=" +<%= activity.getId()%>;
-            });
-
+                        markers[i] = new google.maps.Marker({
+                            position: {lat:<%= activity.getLatitude()%>, lng:<%= activity.getLongitude()%>},
+                            map: map,
+                            icon: defaultimage
+                        });
+                        google.maps.event.addListener(markers[i], 'click', function () {
+                            window.location.href = "/JED_Sports_Organization_System/ViewActivity?id=" +<%= activity.getId()%>;
+                        });
                     </c:otherwise>
                 </c:choose>
-
             i = i + 1;
             </c:forEach>
         </c:if>
-
         }
 
     </script>

@@ -30,6 +30,9 @@ hr { margin-top: 5px;margin-bottom: 10px; }
 .msg .author {
     border-left: 1px solid #ddd;
 }
+.msg .author1 {
+    border-right: 1px solid #ddd;
+}
 .msg-wrap {
     padding:10px;
 }
